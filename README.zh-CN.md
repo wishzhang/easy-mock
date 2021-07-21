@@ -132,7 +132,23 @@ $ cd easy-mock && npm install
 **注意：**
 
 - `publicPath` 默认是 `'/dist/'`。如有需要，可以将其替换成自己的 CDN；
+
 - 关于 `fe` 的配置，一旦发生改变应该重新执行 build 命令。
+
+- 预览api可能报错，以下可以解决：
+
+  修改node_modules/restc/faas/index.html
+
+  ```html
+  <!--将下面这行删除-->
+  <script src="https://github.elemecdn.com/highlightjs/cdn-release/9.8.0/build/highlight.min.js"></script>
+  
+  <!--然后添加这两行-->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/languages/go.min.js"></script>
+  ```
+
+  
 
 ### 启动
 
